@@ -15,7 +15,8 @@ function fetchData (url) {
 	fetch(url)//fecth the passed url
 	.then(response => response.json())//convert the data into JSon
 	.then(data => setLocalArray(data.results))//add the data item to the local array)
-	.then( () => generateEmployeeList(employeeArray));//pass the converted data to the function to dislay the data
+	.then( () => generateEmployeeList(employeeArray))//pass the converted data to the function to dislay the data
+	.catch(err => console.log(err.text));
 }
 
 //stores the retrived data into a local array
