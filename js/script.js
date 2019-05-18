@@ -160,12 +160,12 @@ document.querySelector('#search-submit').addEventListener('click', event => sear
 function search (event) {
 	'use strict';
 	event.preventDefault();
-	const searchValue = searchInput.value;//gets the searh value
+	const searchValue = searchInput.value.toUpperCase();//gets the searh value
 	const searchArray = [];//builds a new array to store items in
 	
 	for (let i = 0; i < employeeArray.length; i++) {//loops through the array
 		
-		const name = employeeArray[i].name.first + ' ' + employeeArray[i].name.last;//makes a value to compare the search value with
+		const name = employeeArray[i].name.first.toUpperCase() + ' ' + employeeArray[i].name.last.toUpperCase();//makes a value to compare the search value with
 		
 		let nameFound = true;//a boolean to act as a desicion maker on if they match or not
 		
